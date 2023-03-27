@@ -28,6 +28,30 @@ NULL
 #' [data.table::fwrite] args `x` and `file` always set to args `x` and `path`
 #' of this function.
 #' @export
+#' @return
+#' - `fwf::fwf_write`: Always returns `NULL` invisibly.
+#' @examples
+#' 
+#' # Remember, data types other than character, integer, and double may not
+#' # be properly handled (because meta-information about datatype is lost when
+#' # writing into a text file). See ?data.table::fread for more control.
+#' # over reading behaviour.
+#' exp <- data.frame(
+#'   col1 = c("abcdefghijklmn", "abc"),
+#'   col2 = c(1e6L, 1L),
+#'   col3 = as.Date(c("2000-01-01", "2001-01-01"))
+#' )
+#' tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
+#' fwf::fwf_write(exp, tf)
+#' obs <- fwf::fwf_read(
+#'   path = tf,
+#'   fread_arg_list = list(colClasses = c(col3 = "Date"))
+#' )
+#' stopifnot(
+#'   all.equal(exp, obs, check.attributes = FALSE),
+#'   identical(lapply(exp, class), lapply(obs, class))
+#' )
+#' 
 fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   # @codedoc_comment_block news("fwf::fwf_write", "2023-03-27", "0.1.0")
   # Fun `fwf_write` included in first version of this package.
@@ -48,7 +72,7 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   )
 
   if (is.null(widths)) {
-    widths <- vapply(x, function(col) max(nchar(col)), integer(1L))
+    widths <- vapply(x, max_nchar, integer(1L))
   }
   
   fwf_dt <- data.table::setDT(lapply(seq_along(widths), function(j) {
@@ -67,6 +91,8 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
 #' - `list`: Pass these additional arguments passed to [data.table::fread].
 #' 
 #' [data.table::fread] arg `file` is always set to arg `path` of this function.
+#' @return
+#' - `fwf::fwf_read`: Returns a `data.table`, the table read from `path`.
 #' @export
 fwf_read <- function(path, fread_arg_list = NULL) {
   # @codedoc_comment_block news("fwf::fwf_read", "2023-03-27", "0.1.0")
