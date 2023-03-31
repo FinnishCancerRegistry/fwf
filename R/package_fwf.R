@@ -9,6 +9,16 @@ NULL
 
 # @codedoc_comment_block R_package_description(fwf)
 # `fwf` is a tiny package to read and write fixed width format tables.
+#
+# # Example
+# ```r
+# @codedoc_insert_comment_block R_package_example(fwf)
+# ```
+#
+# # Installation
+# ```r
+# devtools::install_github("FinnishCancerRegistry/fwf")
+# ````
 # @codedoc_comment_block R_package_description(fwf)
 
 # @codedoc_comment_block news("fwf", "2023-03-31", "1.0.0")

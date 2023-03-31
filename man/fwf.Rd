@@ -60,6 +60,34 @@ Read and write fixed-width format files.
 
 \code{fwf} is a tiny package to read and write fixed width format tables.
 }
+\section{Example}{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{# Remember, data types other than character, integer, and double may not
+# be properly handled (because meta-information about datatype is lost when
+# writing into a text file). See ?data.table::fread for more control.
+# over reading behaviour.
+exp <- data.frame(
+col1 = c("abcdefghijklmn", "abc"),
+col2 = c(1e6L, 1L),
+col3 = as.Date(c("2000-01-01", "2001-01-01"))
+)
+tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
+fwf::fwf_write(exp, tf)
+obs <- fwf::fwf_read(
+path = tf,
+fread_arg_list = list(colClasses = c(col3 = "Date"))
+)
+stopifnot(
+all.equal(exp, obs, check.attributes = FALSE),
+identical(lapply(exp, class), lapply(obs, class))
+)
+}\if{html}{\out{</div>}}
+}
+
+\section{Installation}{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{devtools::install_github("FinnishCancerRegistry/fwf")
+}\if{html}{\out{</div>}}
+}
+
 \section{News}{
 
 \subsection{News for version 1.0.0}{
@@ -93,25 +121,24 @@ Fun \code{fwf_write} included in first version of this package.
 }
 
 \examples{
-
 # Remember, data types other than character, integer, and double may not
 # be properly handled (because meta-information about datatype is lost when
 # writing into a text file). See ?data.table::fread for more control.
 # over reading behaviour.
 exp <- data.frame(
-  col1 = c("abcdefghijklmn", "abc"),
-  col2 = c(1e6L, 1L),
-  col3 = as.Date(c("2000-01-01", "2001-01-01"))
+col1 = c("abcdefghijklmn", "abc"),
+col2 = c(1e6L, 1L),
+col3 = as.Date(c("2000-01-01", "2001-01-01"))
 )
 tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
 fwf::fwf_write(exp, tf)
 obs <- fwf::fwf_read(
-  path = tf,
-  fread_arg_list = list(colClasses = c(col3 = "Date"))
+path = tf,
+fread_arg_list = list(colClasses = c(col3 = "Date"))
 )
 stopifnot(
-  all.equal(exp, obs, check.attributes = FALSE),
-  identical(lapply(exp, class), lapply(obs, class))
+all.equal(exp, obs, check.attributes = FALSE),
+identical(lapply(exp, class), lapply(obs, class))
 )
 
 }

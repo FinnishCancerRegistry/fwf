@@ -30,28 +30,7 @@ NULL
 #' @export
 #' @return
 #' - `fwf::fwf_write`: Always returns `NULL` invisibly.
-#' @examples
-#' 
-#' # Remember, data types other than character, integer, and double may not
-#' # be properly handled (because meta-information about datatype is lost when
-#' # writing into a text file). See ?data.table::fread for more control.
-#' # over reading behaviour.
-#' exp <- data.frame(
-#'   col1 = c("abcdefghijklmn", "abc"),
-#'   col2 = c(1e6L, 1L),
-#'   col3 = as.Date(c("2000-01-01", "2001-01-01"))
-#' )
-#' tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
-#' fwf::fwf_write(exp, tf)
-#' obs <- fwf::fwf_read(
-#'   path = tf,
-#'   fread_arg_list = list(colClasses = c(col3 = "Date"))
-#' )
-#' stopifnot(
-#'   all.equal(exp, obs, check.attributes = FALSE),
-#'   identical(lapply(exp, class), lapply(obs, class))
-#' )
-#' 
+#' @eval codedoc::codedoc_lines("^fwf::fwf_write$")
 fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   # @codedoc_comment_block news("fwf::fwf_write", "2023-03-27", "0.1.0")
   # Fun `fwf_write` included in first version of this package.
@@ -59,6 +38,31 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   # @codedoc_comment_block news("fwf::fwf_write", "2023-03-28", "0.2.0")
   # Improved `fwf_write` internal preprocessing steps.
   # @codedoc_comment_block news("fwf::fwf_write", "2023-03-28", "0.2.0")
+
+  # @codedoc_comment_block fwf::fwf_write
+  # @examples
+  # @codedoc_comment_block R_package_example(fwf)
+  # # Remember, data types other than character, integer, and double may not
+  # # be properly handled (because meta-information about datatype is lost when
+  # # writing into a text file). See ?data.table::fread for more control.
+  # # over reading behaviour.
+  # exp <- data.frame(
+  #   col1 = c("abcdefghijklmn", "abc"),
+  #   col2 = c(1e6L, 1L),
+  #   col3 = as.Date(c("2000-01-01", "2001-01-01"))
+  # )
+  # tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
+  # fwf::fwf_write(exp, tf)
+  # obs <- fwf::fwf_read(
+  #   path = tf,
+  #   fread_arg_list = list(colClasses = c(col3 = "Date"))
+  # )
+  # stopifnot(
+  #   all.equal(exp, obs, check.attributes = FALSE),
+  #   identical(lapply(exp, class), lapply(obs, class))
+  # )
+  # @codedoc_comment_block R_package_example(fwf)
+  # @codedoc_comment_block fwf::fwf_write
   stopifnot(
     is.data.frame(x)
   )
