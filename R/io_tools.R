@@ -56,6 +56,9 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   # @codedoc_comment_block news("fwf::fwf_write", "2023-03-27", "0.1.0")
   # Fun `fwf_write` included in first version of this package.
   # @codedoc_comment_block news("fwf::fwf_write", "2023-03-27", "0.1.0")
+  # @codedoc_comment_block news("fwf::fwf_write", "2023-03-28", "0.2.0")
+  # Improved `fwf_write` internal preprocessing steps.
+  # @codedoc_comment_block news("fwf::fwf_write", "2023-03-28", "0.2.0")
   stopifnot(
     is.data.frame(x)
   )

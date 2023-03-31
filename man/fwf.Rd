@@ -62,6 +62,22 @@ Read and write fixed-width format files.
 }
 \section{News}{
 
+\subsection{News for version 1.0.0}{
+\subsection{Object fwf news:}{
+
+Bump to version 1.0.0.
+}
+
+}
+
+\subsection{News for version 0.2.0}{
+\subsection{Object fwf::fwf_write news:}{
+
+Improved \code{fwf_write} internal preprocessing steps.
+}
+
+}
+
 \subsection{News for version 0.1.0}{
 \subsection{Object fwf::fwf_read news:}{
 
