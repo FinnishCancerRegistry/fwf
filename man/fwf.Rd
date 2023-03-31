@@ -90,6 +90,14 @@ identical(lapply(exp, class), lapply(obs, class))
 
 \section{News}{
 
+\subsection{News for version 1.0.1}{
+\subsection{Object fwf news:}{
+
+Improve docpage ?fwf::fwf.
+}
+
+}
+
 \subsection{News for version 1.0.0}{
 \subsection{Object fwf news:}{
 

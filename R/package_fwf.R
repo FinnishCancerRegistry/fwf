@@ -24,3 +24,7 @@ NULL
 # @codedoc_comment_block news("fwf", "2023-03-31", "1.0.0")
 # Bump to version 1.0.0.
 # @codedoc_comment_block news("fwf", "2023-03-31", "1.0.0")
+
+# @codedoc_comment_block news("fwf", "2023-03-31", "1.0.1")
+# Improve docpage ?fwf::fwf.
+# @codedoc_comment_block news("fwf", "2023-03-31", "1.0.1")
