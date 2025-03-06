@@ -2,32 +2,32 @@
 
 ## News for version 1.0.1
 
-### Object fwf news:
+### fwf
 
 Improve docpage ?fwf::fwf.
 
 
 ## News for version 1.0.0
 
-### Object fwf news:
+### fwf
 
 Bump to version 1.0.0.
 
 
 ## News for version 0.2.0
 
-### Object fwf::fwf_write news:
+### fwf::fwf_write
 
 Improved `fwf_write` internal preprocessing steps.
 
 
 ## News for version 0.1.0
 
-### Object fwf::fwf_read news:
+### fwf::fwf_read
 
 Fun `fwf_read` included in first version of this package.
 
-### Object fwf::fwf_write news:
+### fwf::fwf_write
 
 Fun `fwf_write` included in first version of this package.
 

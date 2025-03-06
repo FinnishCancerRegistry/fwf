@@ -2,6 +2,7 @@
 % Please edit documentation in R/io_tools.R, R/package_fwf.R
 \docType{package}
 \name{fwf}
+\alias{fwf-package}
 \alias{fwf}
 \alias{fwf_write}
 \alias{fwf_read}
@@ -93,7 +94,7 @@ stopifnot(
 \section{News}{
 
 \subsection{News for version 1.0.1}{
-\subsection{Object fwf news:}{
+\subsection{fwf}{
 
 Improve docpage ?fwf::fwf.
 }
@@ -101,7 +102,7 @@ Improve docpage ?fwf::fwf.
 }
 
 \subsection{News for version 1.0.0}{
-\subsection{Object fwf news:}{
+\subsection{fwf}{
 
 Bump to version 1.0.0.
 }
@@ -109,7 +110,7 @@ Bump to version 1.0.0.
 }
 
 \subsection{News for version 0.2.0}{
-\subsection{Object fwf::fwf_write news:}{
+\subsection{fwf::fwf_write}{
 
 Improved \code{fwf_write} internal preprocessing steps.
 }
@@ -117,12 +118,12 @@ Improved \code{fwf_write} internal preprocessing steps.
 }
 
 \subsection{News for version 0.1.0}{
-\subsection{Object fwf::fwf_read news:}{
+\subsection{fwf::fwf_read}{
 
 Fun \code{fwf_read} included in first version of this package.
 }
 
-\subsection{Object fwf::fwf_write news:}{
+\subsection{fwf::fwf_write}{
 
 Fun \code{fwf_write} included in first version of this package.
 }
@@ -150,5 +151,9 @@ stopifnot(
   all.equal(exp, obs, check.attributes = FALSE),
   identical(lapply(exp, class), lapply(obs, class))
 )
+
+}
+\author{
+\strong{Maintainer}: Joonas Miettinen \email{joonas.miettinen@cancer.fi} (\href{https://orcid.org/0000-0001-8624-6754}{ORCID})
 
 }
