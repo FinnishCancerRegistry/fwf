@@ -17,4 +17,4 @@ Suggests:
     desc (>= 1.4.2),
     devtools (>= 2.4.5)
 Remotes: 
-    FinnishCancerRegistry/codedoc
+    github::FinnishCancerRegistry/codedoc@release
