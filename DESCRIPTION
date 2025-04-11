@@ -2,13 +2,9 @@ Package: fwf
 Title: Fixed Width Format Tables
 Version: 1.0.1
 Authors@R:
-    person("Joonas", "Miettinen", , "joonas.miettinen@cancer.fi",
-           role = c("aut", "cre"),
+    person("Joonas", "Miettinen", , "joonas.miettinen@cancer.fi", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8624-6754"))
 Description: Tools to read and write fixed width format tables.
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
 License: MIT + file LICENSE
 Imports:
     data.table
@@ -18,3 +14,6 @@ Suggests:
     devtools (>= 2.4.5)
 Remotes:
     github::FinnishCancerRegistry/codedoc@release
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
