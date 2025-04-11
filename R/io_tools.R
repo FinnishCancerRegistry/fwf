@@ -51,7 +51,6 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   #   col2 = c(1e6L, 1L),
   #   col3 = data.table::as.IDate(c("2000-01-01", "2001-01-01"))
   # )
-  # data.table::fwrite(exp, "test.csv")
   # tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
   # fwf::fwf_write(exp, tf)
   # obs <- fwf::fwf_read(path = tf)
