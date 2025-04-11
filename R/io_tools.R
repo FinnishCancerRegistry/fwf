@@ -6,25 +6,25 @@ NULL
 
 #' @rdname fwf
 #' @param x `[data.frame]` (no default)
-#' 
+#'
 #' `data.frame` to write to disk.
-#' 
+#'
 #' @param path `[character]` (no default)
-#' 
+#'
 #' - `fwf_write`: Path to write to.
 #' - `fwf_read`: Path to read from.
-#' 
+#'
 #' @param widths `[NULL, integer]` (default `NULL`)
-#' 
+#'
 #' - `NULL`: the width of each field will be `max(nchar(x[[i]]))` for all
 #'   `i in 1:ncol(x)`
 #' - `integer`: use these widths; must be of length `ncol(x)`
-#' 
+#'
 #' @param fwrite_arg_list `[NULL]` (default `NULL`)
-#' 
+#'
 #' - `NULL`: No additional arguments passed to [data.table::fwrite].
 #' - `list`: Pass these additional arguments passed to [data.table::fwrite].
-#' 
+#'
 #' [data.table::fwrite] args `x` and `file` always set to args `x` and `path`
 #' of this function.
 #' @export
@@ -79,7 +79,7 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   if (is.null(widths)) {
     widths <- vapply(x, max_nchar, integer(1L))
   }
-  
+
   fwf_dt <- data.table::setDT(lapply(seq_along(widths), function(j) {
     fwf_format(x[[j]], width = widths[j])
   }))
@@ -91,10 +91,10 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
 
 #' @rdname fwf
 #' @param fread_arg_list `[NULL, list]` (default `NULL`)
-#' 
+#'
 #' - `NULL`: No additional arguments passed to [data.table::fread].
 #' - `list`: Pass these additional arguments passed to [data.table::fread].
-#' 
+#'
 #' [data.table::fread] arg `file` is always set to arg `path` of this function.
 #' @return
 #' - `fwf::fwf_read`: Returns a `data.table`, the table read from `path`.
