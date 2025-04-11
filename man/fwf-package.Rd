@@ -36,6 +36,14 @@ stopifnot(
 
 \section{News}{
 
+\subsection{News for version 1.0.2}{
+\subsection{fwf}{
+
+Fix example for \code{fwf::fwf_write}.
+}
+
+}
+
 \subsection{News for version 1.0.1}{
 \subsection{fwf}{
 

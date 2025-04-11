@@ -30,3 +30,7 @@
 # @codedoc_comment_block news("fwf", "2023-03-31", "1.0.1")
 # Improve docpage ?fwf::fwf.
 # @codedoc_comment_block news("fwf", "2023-03-31", "1.0.1")
+
+# @codedoc_comment_block news("fwf", "2025-04-11", "1.0.2")
+# Fix example for `fwf::fwf_write`.
+# @codedoc_comment_block news("fwf", "2025-04-11", "1.0.2")
