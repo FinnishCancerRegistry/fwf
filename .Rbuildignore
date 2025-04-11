@@ -3,3 +3,4 @@
 ^.*\.code-workspace$
 ^.*\.Rproj$
 ^\.github$
+^\.radian_history$
