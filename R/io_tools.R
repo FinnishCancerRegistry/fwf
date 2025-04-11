@@ -49,14 +49,12 @@ fwf_write <- function(x, path, widths = NULL, fwrite_arg_list = NULL) {
   # exp <- data.frame(
   #   col1 = c("abcdefghijklmn", "abc"),
   #   col2 = c(1e6L, 1L),
-  #   col3 = as.Date(c("2000-01-01", "2001-01-01"))
+  #   col3 = data.table::as.IDate(c("2000-01-01", "2001-01-01"))
   # )
+  # data.table::fwrite(exp, "test.csv")
   # tf <- tempfile(pattern = "fwf_file_", fileext = ".txt")
   # fwf::fwf_write(exp, tf)
-  # obs <- fwf::fwf_read(
-  #   path = tf,
-  #   fread_arg_list = list(colClasses = c(col3 = "Date"))
-  # )
+  # obs <- fwf::fwf_read(path = tf)
   # stopifnot(
   #   all.equal(exp, obs, check.attributes = FALSE),
   #   identical(lapply(exp, class), lapply(obs, class))
